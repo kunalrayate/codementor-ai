@@ -1,0 +1,47 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: learnai
+    ports: ["3306:3306"]
+    volumes: [mysql_data:/var/lib/mysql]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build: ./backend
+    depends_on:
+      mysql: { condition: service_healthy }
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: root
+      AI_API_KEY: ${AI_API_KEY:-not-configured}
+      AI_BASE_URL: ${AI_BASE_URL:-https://api.openai.com}
+      AI_CHAT_PATH: ${AI_CHAT_PATH:-/v1/chat/completions}
+      AI_EMBEDDINGS_PATH: ${AI_EMBEDDINGS_PATH:-/v1/embeddings}
+      AI_MODEL: ${AI_MODEL:-gpt-4o-mini}
+      AI_EMBEDDING_MODEL: ${AI_EMBEDDING_MODEL:-text-embedding-3-small}
+      JWT_SECRET: ${JWT_SECRET:-change-this-secret-change-this-secret-32bytes-min}
+      CORS_ORIGIN: http://localhost:4200
+      SANDBOX_DIR: /tmp/sandbox
+      SANDBOX_MODE: ${SANDBOX_MODE:-auto}
+    ports: ["8080:8080"]
+    volumes:
+      # the code sandbox starts sibling containers through the host Docker daemon
+      - /var/run/docker.sock:/var/run/docker.sock
+      # same absolute path inside and outside, so bind mounts for sandbox containers resolve on the host
+      - /tmp/sandbox:/tmp/sandbox
+
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports: ["4200:80"]
+
+volumes:
+  mysql_data:

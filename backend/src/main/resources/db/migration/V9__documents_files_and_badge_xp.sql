@@ -1,0 +1,2 @@
+ALTER TABLE documents ADD COLUMN file_path VARCHAR(300) NULL;
+ALTER TABLE badges ADD COLUMN min_xp INT NULL;

@@ -1,0 +1,5 @@
+CREATE TABLE app_settings (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  skey VARCHAR(60) NOT NULL UNIQUE,
+  svalue TEXT
+);

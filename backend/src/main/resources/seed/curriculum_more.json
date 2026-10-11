@@ -1,0 +1,1356 @@
+{
+ "courses": [
+  {
+   "course": {
+    "title": "Java Fundamentals: Control Flow, Methods and Arrays",
+    "description": "Beginner course: decisions, loops, methods, recursion, arrays and strings."
+   },
+   "modules": [
+    {
+     "title": "Control Flow",
+     "position": 1,
+     "lessons": [
+      {
+       "title": "if-else and switch",
+       "content": "Use if, else if and else to run code conditionally. A switch statement chooses between many constant values, for example switch (day) { case 1 -> ...; default -> ... }. Always include a default case. Conditions must evaluate to a boolean; combine them with && and ||.",
+       "cards": [
+        [
+         "Which keyword handles \"otherwise\" in a decision?",
+         "else"
+        ],
+        [
+         "What must an if condition evaluate to?",
+         "A boolean (true or false)."
+        ],
+        [
+         "When is switch better than if-else?",
+         "When comparing one variable against many constant values."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "What type must an if condition have?",
+         "o": [
+          "int",
+          "boolean",
+          "String",
+          "char"
+         ],
+         "c": "B",
+         "e": "Conditions are boolean expressions."
+        },
+        {
+         "q": "What does the default case in a switch do?",
+         "o": [
+          "Runs when no case matches",
+          "Runs first",
+          "Ends the program",
+          "Is required for each case"
+         ],
+         "c": "A",
+         "e": "default handles every value not matched by a case."
+        }
+       ]
+      },
+      {
+       "title": "Loops: for, while and do-while",
+       "content": "A for loop repeats a block a known number of times: for (int i = 0; i < 5; i++). A while loop repeats while a condition is true, and do-while always runs its body at least once. The enhanced for (for (int x : arr)) walks arrays and collections. Update the loop variable or you get an infinite loop.",
+       "cards": [
+        [
+         "Which loop always runs at least once?",
+         "do-while"
+        ],
+        [
+         "Write a loop that runs 5 times.",
+         "for (int i = 0; i < 5; i++) { ... }"
+        ],
+        [
+         "What is an infinite loop?",
+         "A loop whose condition never becomes false."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which loop checks its condition AFTER the body?",
+         "o": [
+          "for",
+          "while",
+          "do-while",
+          "enhanced for"
+         ],
+         "c": "C",
+         "e": "do-while evaluates the condition at the end."
+        },
+        {
+         "q": "for (int i = 0; i < 3; i++) runs how many times?",
+         "o": [
+          "2",
+          "3",
+          "4",
+          "Forever"
+         ],
+         "c": "B",
+         "e": "i takes the values 0, 1 and 2."
+        }
+       ]
+      },
+      {
+       "title": "break, continue and nested loops",
+       "content": "break exits the nearest loop immediately; continue skips to the next iteration. Loops can be nested, for example a for inside a for to print a grid or a multiplication table. Labels such as outer: let break or continue target an outer loop.",
+       "cards": [
+        [
+         "What does break do?",
+         "Exits the nearest enclosing loop (or switch) immediately."
+        ],
+        [
+         "What does continue do?",
+         "Skips the rest of the current iteration and goes to the next one."
+        ],
+        [
+         "Why nest loops?",
+         "To process grids, tables and combinations (rows and columns)."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which statement skips to the next iteration?",
+         "o": [
+          "break",
+          "continue",
+          "return",
+          "exit"
+         ],
+         "c": "B",
+         "e": "continue jumps to the next iteration."
+        },
+        {
+         "q": "How many times does the inner body run in two nested loops of 3 and 4?",
+         "o": [
+          "7",
+          "12",
+          "3",
+          "4"
+         ],
+         "c": "B",
+         "e": "3 x 4 = 12."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Methods",
+     "position": 2,
+     "lessons": [
+      {
+       "title": "Methods and parameters",
+       "content": "A method groups reusable code, for example static int add(int a, int b) { return a + b; }. It has a return type (void if nothing is returned), a name and parameters. Java passes arguments by value: the method receives a copy of primitives and a copy of object references.",
+       "cards": [
+        [
+         "What does the return type void mean?",
+         "The method returns nothing."
+        ],
+        [
+         "Does Java pass arguments by value or by reference?",
+         "By value (object references are copied too)."
+        ],
+        [
+         "Why use methods?",
+         "To reuse code and keep programs organised."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which keyword sends a value back from a method?",
+         "o": [
+          "send",
+          "return",
+          "yield",
+          "out"
+         ],
+         "c": "B",
+         "e": "return gives the result to the caller."
+        },
+        {
+         "q": "A method with no result has return type...",
+         "o": [
+          "null",
+          "empty",
+          "void",
+          "none"
+         ],
+         "c": "C",
+         "e": "void means no return value."
+        }
+       ]
+      },
+      {
+       "title": "Method overloading",
+       "content": "Overloading means several methods share a name but have different parameter lists, such as print(int) and print(String). The compiler chooses the version from the argument types at compile time. Changing only the return type is not valid overloading.",
+       "cards": [
+        [
+         "What is method overloading?",
+         "Same method name, different parameter lists."
+        ],
+        [
+         "When is the overloaded method chosen?",
+         "At compile time, from the argument types."
+        ],
+        [
+         "Is changing only the return type valid overloading?",
+         "No - the parameter list must differ."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Overloaded methods must differ in...",
+         "o": [
+          "parameter list",
+          "return type only",
+          "class name",
+          "access only"
+         ],
+         "c": "A",
+         "e": "Parameter types or count must differ."
+        },
+        {
+         "q": "Overload resolution happens at...",
+         "o": [
+          "runtime",
+          "compile time",
+          "link time",
+          "never"
+         ],
+         "c": "B",
+         "e": "The compiler selects the method."
+        }
+       ]
+      },
+      {
+       "title": "Recursion",
+       "content": "A recursive method calls itself with a smaller input until it reaches a base case, for example factorial(n) = n * factorial(n - 1) with factorial(0) = 1. Without a base case you get a StackOverflowError. Many recursive problems can also be solved with loops.",
+       "cards": [
+        [
+         "What is a base case?",
+         "The condition that stops the recursion."
+        ],
+        [
+         "What happens without a base case?",
+         "StackOverflowError."
+        ],
+        [
+         "Give a classic recursive example.",
+         "Factorial or Fibonacci."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "What error does infinite recursion cause?",
+         "o": [
+          "NullPointerException",
+          "StackOverflowError",
+          "IOException",
+          "ArithmeticException"
+         ],
+         "c": "B",
+         "e": "The call stack runs out of space."
+        },
+        {
+         "q": "factorial(3) with factorial(0)=1 equals...",
+         "o": [
+          "3",
+          "6",
+          "9",
+          "1"
+         ],
+         "c": "B",
+         "e": "3 x 2 x 1 = 6."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Arrays and Strings",
+     "position": 3,
+     "lessons": [
+      {
+       "title": "Arrays",
+       "content": "An array stores a fixed number of elements of one type: int[] marks = new int[5]; or int[] a = {1, 2, 3};. Indexes start at 0 and arr.length gives the size. An invalid index throws ArrayIndexOutOfBoundsException. Arrays.sort and Arrays.toString from java.util.Arrays are very handy.",
+       "cards": [
+        [
+         "What is the first index of an array?",
+         "0"
+        ],
+        [
+         "How do you get an array size?",
+         "arr.length (a field, not a method)."
+        ],
+        [
+         "What happens with an invalid index?",
+         "ArrayIndexOutOfBoundsException."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "int[] a = new int[5]; the last valid index is...",
+         "o": [
+          "5",
+          "4",
+          "6",
+          "0"
+         ],
+         "c": "B",
+         "e": "Indexes run from 0 to length-1."
+        },
+        {
+         "q": "Which expression gives the size of array a?",
+         "o": [
+          "a.size()",
+          "a.length",
+          "a.length()",
+          "len(a)"
+         ],
+         "c": "B",
+         "e": "Arrays use the length field."
+        }
+       ]
+      },
+      {
+       "title": "Two-dimensional arrays",
+       "content": "A two-dimensional array is an array of arrays: int[][] grid = new int[3][4]; grid[1][2] = 7;. Use nested loops to process rows and columns. Rows can have different lengths (jagged arrays).",
+       "cards": [
+        [
+         "How do you declare a 3x4 int grid?",
+         "int[][] grid = new int[3][4];"
+        ],
+        [
+         "How do you read row 1, column 2?",
+         "grid[1][2]"
+        ],
+        [
+         "What is a jagged array?",
+         "A 2D array whose rows have different lengths."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "grid[2][3] refers to...",
+         "o": [
+          "row 3, column 4",
+          "row 2, column 3",
+          "column 2, row 3",
+          "invalid"
+         ],
+         "c": "B",
+         "e": "First index is the row, second the column (0-based)."
+        },
+        {
+         "q": "Best way to visit every cell?",
+         "o": [
+          "one loop",
+          "nested loops",
+          "recursion only",
+          "streams only"
+         ],
+         "c": "B",
+         "e": "Use a loop over rows and one over columns."
+        }
+       ]
+      },
+      {
+       "title": "String methods and StringBuilder",
+       "content": "Strings are immutable. Useful methods: length(), charAt(i), substring(a, b), indexOf, equals, equalsIgnoreCase, toUpperCase, split and trim. Compare strings with equals, not ==. StringBuilder is a mutable buffer for efficient concatenation in loops: sb.append(x).reverse().toString().",
+       "cards": [
+        [
+         "How do you compare two strings?",
+         "With equals() (not ==)."
+        ],
+        [
+         "Why use StringBuilder?",
+         "It builds strings efficiently without creating many objects."
+        ],
+        [
+         "What does substring(1, 3) return?",
+         "Characters at index 1 and 2."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which compares string contents?",
+         "o": [
+          "==",
+          "equals()",
+          "compare",
+          "="
+         ],
+         "c": "B",
+         "e": "== compares references; equals compares text."
+        },
+        {
+         "q": "Strings in Java are...",
+         "o": [
+          "mutable",
+          "immutable",
+          "arrays of int",
+          "primitive"
+         ],
+         "c": "B",
+         "e": "A String cannot be changed after creation."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "course": {
+    "title": "Java OOP Deep Dive and Exception Handling",
+    "description": "Intermediate OOP: constructors, static/final, abstraction, interfaces, access control, enums and exceptions."
+   },
+   "modules": [
+    {
+     "title": "Advanced OOP",
+     "position": 1,
+     "lessons": [
+      {
+       "title": "Constructors and the this keyword",
+       "content": "A constructor initialises an object and can be overloaded. this refers to the current object and can call another constructor, for example this(name, 0). If you write no constructor Java supplies a default no-argument one, which disappears as soon as you define your own.",
+       "cards": [
+        [
+         "What does this refer to?",
+         "The current object."
+        ],
+        [
+         "When does Java provide a default constructor?",
+         "When the class declares no constructor."
+        ],
+        [
+         "How do you call another constructor?",
+         "this(...) as the first statement."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "A constructor has no...",
+         "o": [
+          "name",
+          "parameters",
+          "return type",
+          "body"
+         ],
+         "c": "C",
+         "e": "Constructors never declare a return type."
+        },
+        {
+         "q": "this(...) must be...",
+         "o": [
+          "the last statement",
+          "the first statement",
+          "in main",
+          "static"
+         ],
+         "c": "B",
+         "e": "It must be the first statement of the constructor."
+        }
+       ]
+      },
+      {
+       "title": "static and final",
+       "content": "static members belong to the class, not to individual objects, such as Math.max or a counter shared by all instances. final means unchangeable: a final variable is a constant, a final method cannot be overridden and a final class cannot be extended. Constants are usually static final in UPPER_CASE.",
+       "cards": [
+        [
+         "What does static mean?",
+         "The member belongs to the class, shared by all objects."
+        ],
+        [
+         "What does final mean on a variable?",
+         "Its value cannot change after assignment."
+        ],
+        [
+         "Naming style for constants?",
+         "UPPER_CASE, e.g. MAX_SIZE."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "A final class cannot be...",
+         "o": [
+          "instantiated",
+          "extended",
+          "imported",
+          "printed"
+         ],
+         "c": "B",
+         "e": "final classes (like String) cannot have subclasses."
+        },
+        {
+         "q": "static methods are called using...",
+         "o": [
+          "an object only",
+          "the class name",
+          "this",
+          "super"
+         ],
+         "c": "B",
+         "e": "e.g. Math.max(1, 2)."
+        }
+       ]
+      },
+      {
+       "title": "Abstract classes",
+       "content": "An abstract class cannot be instantiated and may contain abstract methods without a body that subclasses must implement. It can also have fields, constructors and normal methods. Use it when related classes share state and behaviour, for example abstract class Shape { abstract double area(); }.",
+       "cards": [
+        [
+         "Can you create an object of an abstract class?",
+         "No, only of a concrete subclass."
+        ],
+        [
+         "What is an abstract method?",
+         "A method declared without a body that subclasses must implement."
+        ],
+        [
+         "When use an abstract class?",
+         "When subclasses share state and behaviour."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which keyword declares a class that cannot be instantiated?",
+         "o": [
+          "final",
+          "abstract",
+          "static",
+          "private"
+         ],
+         "c": "B",
+         "e": "abstract classes are incomplete by design."
+        },
+        {
+         "q": "A concrete subclass of an abstract class must...",
+         "o": [
+          "implement all abstract methods",
+          "be final",
+          "be static",
+          "have no fields"
+         ],
+         "c": "A",
+         "e": "Otherwise it must also be abstract."
+        }
+       ]
+      },
+      {
+       "title": "Interfaces",
+       "content": "An interface declares a contract of methods that implementing classes must provide: class Dog implements Pet. A class can implement many interfaces. Since Java 8 interfaces can hold default and static methods. Use interfaces for capabilities such as Comparable and Runnable, and abstract classes for shared base code.",
+       "cards": [
+        [
+         "Which keyword implements an interface?",
+         "implements"
+        ],
+        [
+         "Can a class implement several interfaces?",
+         "Yes."
+        ],
+        [
+         "What is a default method?",
+         "An interface method with a body (Java 8+)."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Java classes can implement...",
+         "o": [
+          "one interface",
+          "many interfaces",
+          "no interface",
+          "only abstract interfaces"
+         ],
+         "c": "B",
+         "e": "Multiple interface implementation is allowed."
+        },
+        {
+         "q": "Interface methods are by default...",
+         "o": [
+          "private",
+          "public abstract",
+          "static",
+          "final"
+         ],
+         "c": "B",
+         "e": "Unless marked default or static."
+        }
+       ]
+      },
+      {
+       "title": "Access modifiers and packages",
+       "content": "private is visible only inside the class, default (no keyword) inside the package, protected inside the package and subclasses, public everywhere. Packages group related classes (package com.shop.model;) and avoid name clashes. Import classes with import java.util.List;.",
+       "cards": [
+        [
+         "Which modifier is the most restrictive?",
+         "private"
+        ],
+        [
+         "What is a package?",
+         "A namespace that groups related classes."
+        ],
+        [
+         "Visibility of protected?",
+         "Same package and subclasses."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which is visible everywhere?",
+         "o": [
+          "private",
+          "protected",
+          "public",
+          "default"
+         ],
+         "c": "C",
+         "e": "public has no restriction."
+        },
+        {
+         "q": "Which keyword brings a class from another package?",
+         "o": [
+          "include",
+          "using",
+          "import",
+          "require"
+         ],
+         "c": "C",
+         "e": "import java.util.List;"
+        }
+       ]
+      },
+      {
+       "title": "Enums",
+       "content": "An enum defines a fixed set of constants: enum Day { MON, TUE, WED }. Enums can have fields, constructors and methods, and work well in switch statements. values() returns all constants and valueOf(String) converts text to an enum.",
+       "cards": [
+        [
+         "What is an enum?",
+         "A type with a fixed set of named constants."
+        ],
+        [
+         "What does values() return?",
+         "An array of all enum constants."
+        ],
+        [
+         "Can enums have methods?",
+         "Yes, plus fields and constructors."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Enum constants are usually written in...",
+         "o": [
+          "camelCase",
+          "UPPER_CASE",
+          "lowercase",
+          "snake_case"
+         ],
+         "c": "B",
+         "e": "e.g. MONDAY."
+        },
+        {
+         "q": "Which method converts a String to an enum?",
+         "o": [
+          "parse",
+          "valueOf",
+          "toEnum",
+          "of"
+         ],
+         "c": "B",
+         "e": "Day.valueOf(\"MON\")"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Exception Handling",
+     "position": 2,
+     "lessons": [
+      {
+       "title": "try, catch and finally",
+       "content": "Exceptions are runtime problems such as dividing by zero. Wrap risky code in try, handle it in catch (ArithmeticException e) and put cleanup in finally, which always runs. Catch specific exceptions before general ones. try-with-resources closes AutoCloseable resources automatically.",
+       "cards": [
+        [
+         "Which block always runs?",
+         "finally"
+        ],
+        [
+         "Which block handles an exception?",
+         "catch"
+        ],
+        [
+         "What does try-with-resources do?",
+         "Closes resources automatically."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which block runs whether or not an exception occurs?",
+         "o": [
+          "try",
+          "catch",
+          "finally",
+          "throw"
+         ],
+         "c": "C",
+         "e": "finally is for cleanup."
+        },
+        {
+         "q": "Order of multiple catch blocks?",
+         "o": [
+          "general first",
+          "specific first",
+          "any order",
+          "alphabetical"
+         ],
+         "c": "B",
+         "e": "A general catch first would hide specific ones (compile error)."
+        }
+       ]
+      },
+      {
+       "title": "throw, throws and custom exceptions",
+       "content": "throw raises an exception object; throws in a method signature declares a checked exception it may raise. Checked exceptions such as IOException must be handled or declared; unchecked ones (RuntimeException) need not be. Create your own with class InvalidAgeException extends Exception.",
+       "cards": [
+        [
+         "throw vs throws?",
+         "throw raises an exception; throws declares one in the signature."
+        ],
+        [
+         "Checked exception example?",
+         "IOException"
+        ],
+        [
+         "How to create a custom exception?",
+         "Extend Exception (checked) or RuntimeException (unchecked)."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which keyword declares possible exceptions in a method signature?",
+         "o": [
+          "throw",
+          "throws",
+          "catch",
+          "raise"
+         ],
+         "c": "B",
+         "e": "void read() throws IOException"
+        },
+        {
+         "q": "Which is unchecked?",
+         "o": [
+          "IOException",
+          "SQLException",
+          "NullPointerException",
+          "Exception"
+         ],
+         "c": "C",
+         "e": "RuntimeException subclasses are unchecked."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "course": {
+    "title": "Java Collections, Generics and Streams",
+    "description": "Intermediate: generics, sorting, queues, lambdas, the Streams API and Optional."
+   },
+   "modules": [
+    {
+     "title": "Generics and Sorting",
+     "position": 1,
+     "lessons": [
+      {
+       "title": "Generics",
+       "content": "Generics let classes and methods work with any type while keeping type safety: List<String> names = new ArrayList<>(). You can write your own, such as class Box<T> { T value; }. Generics are checked at compile time and prevent ClassCastException. Primitives need wrapper types such as Integer.",
+       "cards": [
+        [
+         "Why use generics?",
+         "Compile-time type safety and no casting."
+        ],
+        [
+         "What is T in Box<T>?",
+         "A type parameter (placeholder for a real type)."
+        ],
+        [
+         "Can generics hold int?",
+         "No, use the wrapper Integer."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "List<int> is...",
+         "o": [
+          "valid",
+          "invalid - use Integer",
+          "faster",
+          "deprecated"
+         ],
+         "c": "B",
+         "e": "Generic type arguments must be reference types."
+        },
+        {
+         "q": "Generics are checked at...",
+         "o": [
+          "runtime",
+          "compile time",
+          "deploy time",
+          "never"
+         ],
+         "c": "B",
+         "e": "The compiler enforces them."
+        }
+       ]
+      },
+      {
+       "title": "Comparable and Comparator",
+       "content": "Comparable gives a class its natural order through compareTo(). Comparator defines an external order, for example list.sort(Comparator.comparing(Student::getMarks)). Collections.sort and TreeSet use these to order elements. compare returns a negative number, zero or a positive number.",
+       "cards": [
+        [
+         "Comparable vs Comparator?",
+         "Comparable = natural order inside the class; Comparator = separate custom order."
+        ],
+        [
+         "Which method does Comparable define?",
+         "compareTo()"
+        ],
+        [
+         "What does compare return?",
+         "Negative, zero or positive."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which interface defines compareTo?",
+         "o": [
+          "Comparator",
+          "Comparable",
+          "Iterable",
+          "Cloneable"
+         ],
+         "c": "B",
+         "e": "Comparable<T>."
+        },
+        {
+         "q": "To sort a list by a custom rule use...",
+         "o": [
+          "Comparator",
+          "Runnable",
+          "Serializable",
+          "Iterator"
+         ],
+         "c": "A",
+         "e": "Pass a Comparator to sort()."
+        }
+       ]
+      },
+      {
+       "title": "Queue, Deque and Iterator",
+       "content": "A Queue is first-in-first-out: offer() adds and poll() removes the head. A Deque such as ArrayDeque works at both ends and can act as a stack with push and pop. An Iterator walks any collection with hasNext() and next() and can safely remove elements with remove().",
+       "cards": [
+        [
+         "Queue order?",
+         "First in, first out (FIFO)."
+        ],
+        [
+         "Which class works as a stack?",
+         "ArrayDeque (push/pop)."
+        ],
+        [
+         "How to remove while iterating?",
+         "Use Iterator.remove()."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which method removes the head of a Queue?",
+         "o": [
+          "push",
+          "poll",
+          "add",
+          "get"
+         ],
+         "c": "B",
+         "e": "poll() removes and returns the head."
+        },
+        {
+         "q": "Stack behaviour is",
+         "o": [
+          "FIFO",
+          "LIFO",
+          "random",
+          "sorted"
+         ],
+         "c": "B",
+         "e": "Last in, first out."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Lambdas and Streams",
+     "position": 2,
+     "lessons": [
+      {
+       "title": "Lambda expressions and functional interfaces",
+       "content": "A lambda is a short anonymous function such as (a, b) -> a + b. It implements a functional interface, which has exactly one abstract method (Runnable, Comparator, Function, Predicate). Method references like String::toUpperCase make code even shorter.",
+       "cards": [
+        [
+         "What is a lambda?",
+         "A short anonymous function."
+        ],
+        [
+         "What is a functional interface?",
+         "An interface with exactly one abstract method."
+        ],
+        [
+         "Example method reference?",
+         "String::toUpperCase"
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which syntax is a lambda?",
+         "o": [
+          "a => a + 1",
+          "(a) -> a + 1",
+          "function(a)",
+          "lambda a:"
+         ],
+         "c": "B",
+         "e": "Java uses the arrow ->."
+        },
+        {
+         "q": "Predicate<T> returns...",
+         "o": [
+          "void",
+          "boolean",
+          "T",
+          "int"
+         ],
+         "c": "B",
+         "e": "test(T) returns boolean."
+        }
+       ]
+      },
+      {
+       "title": "Streams API",
+       "content": "A stream processes a collection in a pipeline: list.stream().filter(x -> x > 10).map(x -> x * 2).collect(Collectors.toList()). Intermediate operations (filter, map, sorted) are lazy; terminal operations (collect, forEach, count, sum) start the work. Streams do not modify the source collection.",
+       "cards": [
+        [
+         "Name an intermediate operation.",
+         "filter, map or sorted."
+        ],
+        [
+         "Name a terminal operation.",
+         "collect, forEach, count or sum."
+        ],
+        [
+         "Does a stream change its source?",
+         "No."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which operation transforms each element?",
+         "o": [
+          "filter",
+          "map",
+          "count",
+          "collect"
+         ],
+         "c": "B",
+         "e": "map applies a function to every element."
+        },
+        {
+         "q": "Intermediate operations are...",
+         "o": [
+          "eager",
+          "lazy",
+          "forbidden",
+          "final"
+         ],
+         "c": "B",
+         "e": "They run only when a terminal operation is called."
+        }
+       ]
+      },
+      {
+       "title": "Optional",
+       "content": "Optional<T> wraps a value that may be absent and helps avoid NullPointerException. Create one with Optional.of, ofNullable or empty. Use isPresent, orElse, orElseGet and ifPresent instead of null checks.",
+       "cards": [
+        [
+         "Why use Optional?",
+         "To represent a missing value without null."
+        ],
+        [
+         "Create an Optional that may be null.",
+         "Optional.ofNullable(value)"
+        ],
+        [
+         "Give a default value.",
+         "optional.orElse(defaultValue)"
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which returns a default if empty?",
+         "o": [
+          "get()",
+          "orElse()",
+          "isEmpty()",
+          "map()"
+         ],
+         "c": "B",
+         "e": "orElse(x) provides the fallback."
+        },
+        {
+         "q": "Optional.of(null) causes...",
+         "o": [
+          "empty Optional",
+          "NullPointerException",
+          "false",
+          "0"
+         ],
+         "c": "B",
+         "e": "Use ofNullable for possibly-null values."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "course": {
+    "title": "Java Intermediate: File I/O, Threads and JDBC",
+    "description": "Intermediate topics: files, serialization, multithreading, executors and database access with JDBC."
+   },
+   "modules": [
+    {
+     "title": "File I/O",
+     "position": 1,
+     "lessons": [
+      {
+       "title": "Reading and writing files",
+       "content": "Use java.nio.file.Files for simple tasks: Files.readAllLines(path) and Files.writeString(path, text). For large files use BufferedReader and BufferedWriter inside try-with-resources. Always handle IOException.",
+       "cards": [
+        [
+         "Easiest way to read all lines?",
+         "Files.readAllLines(path)"
+        ],
+        [
+         "Which exception do file operations throw?",
+         "IOException"
+        ],
+        [
+         "Why try-with-resources for files?",
+         "It closes the file automatically."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which class buffers reading of text?",
+         "o": [
+          "BufferedReader",
+          "Scanner only",
+          "Printer",
+          "FileList"
+         ],
+         "c": "A",
+         "e": "BufferedReader reads lines efficiently."
+        },
+        {
+         "q": "File methods usually declare...",
+         "o": [
+          "IOException",
+          "SQLException",
+          "ArithmeticException",
+          "none"
+         ],
+         "c": "A",
+         "e": "Checked IOException."
+        }
+       ]
+      },
+      {
+       "title": "Serialization",
+       "content": "Serialization converts an object to bytes so it can be saved or sent. The class must implement java.io.Serializable; ObjectOutputStream writes it and ObjectInputStream reads it back. Fields marked transient are skipped. Define serialVersionUID to control versioning.",
+       "cards": [
+        [
+         "Which interface enables serialization?",
+         "java.io.Serializable"
+        ],
+        [
+         "What does transient do?",
+         "Excludes a field from serialization."
+        ],
+        [
+         "Which class writes objects?",
+         "ObjectOutputStream"
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which keyword skips a field during serialization?",
+         "o": [
+          "static final",
+          "transient",
+          "volatile",
+          "skip"
+         ],
+         "c": "B",
+         "e": "transient fields are not saved."
+        },
+        {
+         "q": "Serializable has...",
+         "o": [
+          "one method",
+          "no methods (marker)",
+          "two methods",
+          "a constructor"
+         ],
+         "c": "B",
+         "e": "It is a marker interface."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Multithreading",
+     "position": 2,
+     "lessons": [
+      {
+       "title": "Threads and Runnable",
+       "content": "A thread is an independent path of execution. Create one by implementing Runnable and passing it to new Thread(task).start(). Never call run() directly, because that does not start a new thread. join() waits for a thread to finish.",
+       "cards": [
+        [
+         "How do you start a thread?",
+         "thread.start()"
+        ],
+        [
+         "What does calling run() directly do?",
+         "Runs in the current thread - no new thread."
+        ],
+        [
+         "What does join() do?",
+         "Waits until the thread finishes."
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which method starts a new thread?",
+         "o": [
+          "run()",
+          "start()",
+          "begin()",
+          "execute()"
+         ],
+         "c": "B",
+         "e": "start() creates the new thread."
+        },
+        {
+         "q": "Runnable defines which method?",
+         "o": [
+          "call()",
+          "run()",
+          "start()",
+          "execute()"
+         ],
+         "c": "B",
+         "e": "void run()."
+        }
+       ]
+      },
+      {
+       "title": "Synchronization",
+       "content": "When threads share mutable data you can get race conditions. The synchronized keyword lets only one thread at a time execute a method or block on the same lock. AtomicInteger and ConcurrentHashMap are thread-safe alternatives that need no explicit locks.",
+       "cards": [
+        [
+         "What is a race condition?",
+         "Wrong results because threads access shared data at the same time."
+        ],
+        [
+         "What does synchronized do?",
+         "Allows one thread at a time into the block/method."
+        ],
+        [
+         "Thread-safe counter class?",
+         "AtomicInteger"
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "synchronized provides...",
+         "o": [
+          "speed",
+          "mutual exclusion",
+          "sorting",
+          "caching"
+         ],
+         "c": "B",
+         "e": "Only one thread holds the lock."
+        },
+        {
+         "q": "Which is thread-safe?",
+         "o": [
+          "ArrayList",
+          "HashMap",
+          "ConcurrentHashMap",
+          "int[]"
+         ],
+         "c": "C",
+         "e": "ConcurrentHashMap is designed for concurrency."
+        }
+       ]
+      },
+      {
+       "title": "ExecutorService",
+       "content": "ExecutorService manages a pool of threads: ExecutorService ex = Executors.newFixedThreadPool(4); ex.submit(task);. submit returns a Future whose get() waits for the result. Always call shutdown() when you are finished.",
+       "cards": [
+        [
+         "Why use a thread pool?",
+         "Reuse threads and limit concurrency."
+        ],
+        [
+         "What does submit return?",
+         "A Future."
+        ],
+        [
+         "What must you call at the end?",
+         "shutdown()"
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which method waits for a task result?",
+         "o": [
+          "Future.get()",
+          "Future.wait()",
+          "Thread.join()",
+          "run()"
+         ],
+         "c": "A",
+         "e": "get() blocks until the result is ready."
+        },
+        {
+         "q": "newFixedThreadPool(4) creates...",
+         "o": [
+          "4 pools",
+          "a pool of 4 threads",
+          "4 tasks",
+          "a queue"
+         ],
+         "c": "B",
+         "e": "A pool with 4 worker threads."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "title": "JDBC",
+     "position": 3,
+     "lessons": [
+      {
+       "title": "Connecting to a database with JDBC",
+       "content": "JDBC is the standard Java API for relational databases. Add the driver, then DriverManager.getConnection(url, user, password) returns a Connection. Use try-with-resources so connections, statements and result sets are closed. Read a ResultSet with while (rs.next()).",
+       "cards": [
+        [
+         "What is JDBC?",
+         "Java's standard API to access relational databases."
+        ],
+        [
+         "How do you get a connection?",
+         "DriverManager.getConnection(url, user, password)"
+        ],
+        [
+         "How do you read result rows?",
+         "while (rs.next()) { ... }"
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "Which class opens a database connection?",
+         "o": [
+          "DriverManager",
+          "Scanner",
+          "Socket",
+          "Statement"
+         ],
+         "c": "A",
+         "e": "DriverManager.getConnection(...)"
+        },
+        {
+         "q": "ResultSet.next() returns...",
+         "o": [
+          "the row",
+          "true if another row exists",
+          "the count",
+          "void"
+         ],
+         "c": "B",
+         "e": "It moves to the next row and returns a boolean."
+        }
+       ]
+      },
+      {
+       "title": "PreparedStatement and CRUD",
+       "content": "A PreparedStatement uses placeholders, for example INSERT INTO student(name, marks) VALUES (?, ?). Set values with setString and setInt, then call executeUpdate for INSERT, UPDATE or DELETE and executeQuery for SELECT. Prepared statements prevent SQL injection and are faster for repeated queries.",
+       "cards": [
+        [
+         "Why PreparedStatement?",
+         "It prevents SQL injection and can be reused efficiently."
+        ],
+        [
+         "Which method runs SELECT?",
+         "executeQuery()"
+        ],
+        [
+         "Which method runs INSERT/UPDATE/DELETE?",
+         "executeUpdate()"
+        ]
+       ],
+       "quiz": [
+        {
+         "q": "What does ? represent in a PreparedStatement?",
+         "o": [
+          "a wildcard",
+          "a parameter placeholder",
+          "a comment",
+          "a table"
+         ],
+         "c": "B",
+         "e": "Values are bound with setXxx."
+        },
+        {
+         "q": "CRUD stands for...",
+         "o": [
+          "Create Read Update Delete",
+          "Copy Run Undo Deploy",
+          "Connect Read Use Disconnect",
+          "none"
+         ],
+         "c": "A",
+         "e": "The four basic data operations."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

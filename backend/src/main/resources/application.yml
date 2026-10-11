@@ -1,0 +1,82 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: ai-learning-platform
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3307}/learnai?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  ai:
+    retry:            # fail fast instead of Spring AI's default 10 attempts / minutes of waiting
+      max-attempts: 2
+      backoff:
+        initial-interval: 1500ms
+        multiplier: 2
+        max-interval: 5000ms
+    openai:
+      # Works with OpenAI, Google Gemini (free tier), Groq (free tier) and Ollama (local, free).
+      # See README -> "AI provider setup". Only these AI_* variables need to change.
+      api-key: ${AI_API_KEY:${OPENAI_API_KEY:not-configured}}
+      base-url: ${AI_BASE_URL:https://api.openai.com}
+      chat:
+        completions-path: ${AI_CHAT_PATH:/v1/chat/completions}
+        options:
+          model: ${AI_MODEL:${OPENAI_MODEL:gpt-4o-mini}}
+          temperature: 0.4
+          max-tokens: ${AI_MAX_TOKENS:4096}
+      embedding:
+        embeddings-path: ${AI_EMBEDDINGS_PATH:/v1/embeddings}
+        options:
+          model: ${AI_EMBEDDING_MODEL:text-embedding-3-small}
+
+app:
+  version: "11"
+  cors-origin: ${CORS_ORIGIN:http://localhost:4200}
+  uploads-dir: ${UPLOADS_DIR:./uploads}
+  video:
+    web-fallback: ${VIDEO_WEB_FALLBACK:true}   # find videos through YouTube web search when the official API is not set up
+  jwt:
+    secret: ${JWT_SECRET:change-this-secret-change-this-secret-32bytes-min}
+    access-minutes: 15
+    refresh-days: 7
+  ai:
+    daily-limit: 100
+    per-minute-limit: 10
+    max-input-chars: 2000
+    history-size: 10
+  rag:
+    max-chunks: 150
+  xp:   # defaults only - the live values are editable by the admin (table xp_rules)
+    lesson-completed: 50
+    quiz-passed: 100
+    course-completed: 500
+    problem-solved: 100
+    streak-bonus: 100
+  quiz:
+    pass-percent: 60
+    questions-per-attempt: 5
+  sandbox:
+    mode: ${SANDBOX_MODE:auto}       # auto (Docker if running, else local) | docker (strict) | local (development only, NOT isolated)
+    work-dir: ${SANDBOX_DIR:/tmp/sandbox}
+    image: eclipse-temurin:21-jdk
+    compile-timeout-sec: 60
+    run-timeout-sec: 10
+  seed:
+    admin-email: admin@learnai.com
+    admin-password: Admin@123
+    reset-demo-passwords: ${SEED_RESET_DEMO_PASSWORDS:true}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

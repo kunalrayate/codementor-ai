@@ -1,0 +1,542 @@
+{
+ "course": {
+  "title": "Java Programming",
+  "description": "Learn Java from the basics to object-oriented programming and collections."
+ },
+ "modules": [
+  {
+   "title": "Java Basics",
+   "lessons": [
+    {
+     "title": "Variables",
+     "content": "A variable is a named storage location. In Java every variable has a type, for example int age = 20; or String name = \"Alex\";. Variables must be declared before use. Local variables live inside methods; fields live inside classes. Use camelCase names and give variables meaningful names.",
+     "cards": [
+      [
+       "What is a variable in Java?",
+       "A named memory location that stores a value of a specific type, e.g. int age = 20;"
+      ],
+      [
+       "Which naming convention do Java variables use?",
+       "camelCase, starting with a lowercase letter, e.g. studentName."
+      ],
+      [
+       "Local variable vs field?",
+       "A local variable is declared inside a method and exists only there; a field is declared in a class and belongs to the object (or the class if static)."
+      ],
+      [
+       "Must a variable be declared before use?",
+       "Yes. Java is statically typed: every variable needs a declared type before it is used."
+      ]
+     ],
+     "quiz": [
+      {
+       "q": "Which declaration is valid in Java?",
+       "o": [
+        "int 2age = 5;",
+        "int age = 5;",
+        "integer age = 5;",
+        "age int = 5;"
+       ],
+       "c": "B",
+       "e": "A type comes first, names cannot start with a digit, and the primitive type is int."
+      },
+      {
+       "q": "Which naming style is the Java convention for variables?",
+       "o": [
+        "snake_case",
+        "PascalCase",
+        "camelCase",
+        "UPPER-CASE"
+       ],
+       "c": "C",
+       "e": "Variables use camelCase, e.g. totalMarks."
+      },
+      {
+       "q": "Where does a local variable live?",
+       "o": [
+        "Inside a method",
+        "Inside a class but outside methods",
+        "In the database",
+        "Only in static blocks"
+       ],
+       "c": "A",
+       "e": "Local variables are declared inside methods and disappear when the method ends."
+      }
+     ],
+     "video": "https://www.youtube.com/watch?v=eIrMbAQSU34"
+    },
+    {
+     "title": "Data Types",
+     "content": "Java has 8 primitive types: byte, short, int, long, float, double, char and boolean. Everything else, including String and arrays, is a reference type. int stores whole numbers, double stores decimals, boolean stores true/false. Casting converts between types, for example (int) 3.9 gives 3.",
+     "cards": [
+      [
+       "How many primitive types does Java have?",
+       "Eight: byte, short, int, long, float, double, char and boolean."
+      ],
+      [
+       "Is String a primitive type?",
+       "No. String is a reference type (a class)."
+      ],
+      [
+       "What does (int) 3.9 evaluate to?",
+       "3 - casting truncates the decimal part."
+      ],
+      [
+       "Which type stores true/false?",
+       "boolean"
+      ]
+     ],
+     "quiz": [
+      {
+       "q": "Which of these is NOT a primitive type?",
+       "o": [
+        "int",
+        "boolean",
+        "String",
+        "char"
+       ],
+       "c": "C",
+       "e": "String is a class, so it is a reference type."
+      },
+      {
+       "q": "What is the value of (int) 7.8?",
+       "o": [
+        "8",
+        "7",
+        "7.8",
+        "Compile error"
+       ],
+       "c": "B",
+       "e": "Casting to int truncates the fraction; it does not round."
+      },
+      {
+       "q": "Which type is best for a whole number like 25?",
+       "o": [
+        "double",
+        "int",
+        "boolean",
+        "char"
+       ],
+       "c": "B",
+       "e": "int stores whole numbers."
+      }
+     ],
+     "video": "https://www.youtube.com/watch?v=eIrMbAQSU34"
+    },
+    {
+     "title": "Operators",
+     "content": "Arithmetic operators are +, -, *, / and %. Integer division discards the fraction: 7 / 2 is 3, and 7 % 2 is 1. Relational operators (==, !=, <, >, <=, >=) compare values and return a boolean. Logical operators && (and), || (or) and ! (not) combine conditions. The assignment operator = stores a value, and compound forms like += and ++ update a variable in place.",
+     "cards": [
+      [
+       "What is 7 / 2 with ints?",
+       "3 - integer division drops the fraction."
+      ],
+      [
+       "What does the % operator do?",
+       "Returns the remainder of a division, e.g. 7 % 2 is 1."
+      ],
+      [
+       "Difference between = and ==?",
+       "= assigns a value; == compares two values."
+      ],
+      [
+       "What does && mean?",
+       "Logical AND: true only when both conditions are true."
+      ]
+     ],
+     "quiz": [
+      {
+       "q": "What is the result of 10 % 3?",
+       "o": [
+        "3",
+        "1",
+        "0",
+        "3.33"
+       ],
+       "c": "B",
+       "e": "10 divided by 3 leaves a remainder of 1."
+      },
+      {
+       "q": "Which operator checks equality?",
+       "o": [
+        "=",
+        "==",
+        "=>",
+        "!="
+       ],
+       "c": "B",
+       "e": "== compares; = assigns."
+      },
+      {
+       "q": "What does count++ do?",
+       "o": [
+        "Adds 1 to count",
+        "Doubles count",
+        "Compares count",
+        "Creates count"
+       ],
+       "c": "A",
+       "e": "++ increments the variable by one."
+      }
+     ],
+     "video": "https://www.youtube.com/watch?v=eIrMbAQSU34"
+    }
+   ],
+   "position": 1
+  },
+  {
+   "title": "Object-Oriented Programming",
+   "lessons": [
+    {
+     "title": "Classes",
+     "content": "A class is a blueprint for objects. It defines fields (data) and methods (behaviour). An object is an instance created with the new keyword, for example Student s = new Student();. A constructor initialises a new object and has the same name as the class. Encapsulation means keeping fields private and exposing them through public getters and setters.",
+     "cards": [
+      [
+       "What is a class?",
+       "A blueprint that defines the fields and methods of objects."
+      ],
+      [
+       "How do you create an object?",
+       "With the new keyword: Student s = new Student();"
+      ],
+      [
+       "What is a constructor?",
+       "A special method with the class name that initialises a new object."
+      ],
+      [
+       "What is encapsulation?",
+       "Hiding fields (private) and exposing them through public methods."
+      ]
+     ],
+     "quiz": [
+      {
+       "q": "Which keyword creates an object?",
+       "o": [
+        "create",
+        "new",
+        "object",
+        "make"
+       ],
+       "c": "B",
+       "e": "new allocates and initialises an object."
+      },
+      {
+       "q": "A constructor has the same name as...",
+       "o": [
+        "its package",
+        "its class",
+        "its main method",
+        "its object"
+       ],
+       "c": "B",
+       "e": "Constructors are named exactly like their class."
+      },
+      {
+       "q": "Encapsulation is best achieved with...",
+       "o": [
+        "public fields",
+        "private fields and public getters/setters",
+        "static methods only",
+        "global variables"
+       ],
+       "c": "B",
+       "e": "Private data plus controlled public access."
+      }
+     ]
+    },
+    {
+     "title": "Inheritance",
+     "content": "Inheritance lets a class acquire the fields and methods of another class using the extends keyword, for example class Dog extends Animal. The subclass can add new members or override inherited methods. super refers to the parent class. Java supports single inheritance of classes, but a class can implement many interfaces.",
+     "cards": [
+      [
+       "Which keyword makes a class inherit from another?",
+       "extends"
+      ],
+      [
+       "What does super refer to?",
+       "The parent class (its constructor or members)."
+      ],
+      [
+       "Can a Java class extend more than one class?",
+       "No. Java has single inheritance for classes, but a class can implement many interfaces."
+      ],
+      [
+       "What is method overriding?",
+       "A subclass provides its own implementation of an inherited method."
+      ]
+     ],
+     "quiz": [
+      {
+       "q": "Which keyword is used to inherit a class in Java?",
+       "o": [
+        "implements",
+        "extends",
+        "inherits",
+        "super"
+       ],
+       "c": "B",
+       "e": "class Dog extends Animal. implements is used for interfaces."
+      },
+      {
+       "q": "Which keyword calls the parent constructor?",
+       "o": [
+        "parent",
+        "base",
+        "super",
+        "this"
+       ],
+       "c": "C",
+       "e": "super(...) calls the parent constructor."
+      },
+      {
+       "q": "Java classes support...",
+       "o": [
+        "multiple class inheritance",
+        "single class inheritance",
+        "no inheritance",
+        "only interface inheritance"
+       ],
+       "c": "B",
+       "e": "A class can extend only one class."
+      }
+     ]
+    },
+    {
+     "title": "Polymorphism",
+     "content": "Polymorphism means one interface, many forms. Method overloading (same name, different parameters) is resolved at compile time. Method overriding (a subclass redefines a parent method) is resolved at runtime, so Animal a = new Dog(); a.speak(); calls Dog's speak(). Polymorphism makes code flexible and easy to extend.",
+     "cards": [
+      [
+       "What is polymorphism?",
+       "One interface, many forms: the same call behaves differently depending on the object."
+      ],
+      [
+       "Overloading vs overriding?",
+       "Overloading: same name, different parameters (compile time). Overriding: a subclass redefines a method (runtime)."
+      ],
+      [
+       "Animal a = new Dog(); a.speak() - whose method runs?",
+       "Dog's speak(), chosen at runtime."
+      ],
+      [
+       "Which annotation marks an overridden method?",
+       "@Override"
+      ]
+     ],
+     "quiz": [
+      {
+       "q": "Method overriding is resolved at...",
+       "o": [
+        "compile time",
+        "runtime",
+        "load time",
+        "never"
+       ],
+       "c": "B",
+       "e": "The JVM picks the method based on the actual object type."
+      },
+      {
+       "q": "Overloaded methods must differ in...",
+       "o": [
+        "return type only",
+        "parameter list",
+        "method name",
+        "access modifier only"
+       ],
+       "c": "B",
+       "e": "Same name, different parameters."
+      },
+      {
+       "q": "Animal a = new Dog(); a.speak(); runs...",
+       "o": [
+        "Animal.speak()",
+        "Dog.speak()",
+        "Neither",
+        "Compile error"
+       ],
+       "c": "B",
+       "e": "Dynamic dispatch calls the overridden method of Dog."
+      }
+     ]
+    }
+   ],
+   "position": 2
+  },
+  {
+   "title": "Collections",
+   "lessons": [
+    {
+     "title": "List",
+     "content": "A List is an ordered collection that allows duplicates and access by index. ArrayList is backed by a resizable array and is fast for random access; LinkedList is better for frequent insertions and removals at the ends. Common methods: add, get, set, remove, size, contains. Example: List<String> names = new ArrayList<>(); names.add(\"Asha\");",
+     "cards": [
+      [
+       "Does a List allow duplicates?",
+       "Yes, and it keeps insertion order."
+      ],
+      [
+       "ArrayList vs LinkedList?",
+       "ArrayList: fast random access. LinkedList: fast insert/remove at the ends."
+      ],
+      [
+       "How do you get the 3rd element?",
+       "list.get(2) - indexes start at 0."
+      ],
+      [
+       "How do you get the number of elements?",
+       "list.size()"
+      ]
+     ],
+     "quiz": [
+      {
+       "q": "Which collection keeps insertion order and allows duplicates?",
+       "o": [
+        "Set",
+        "List",
+        "Map",
+        "None"
+       ],
+       "c": "B",
+       "e": "A List is ordered and permits duplicates."
+      },
+      {
+       "q": "What is the index of the first element of a list?",
+       "o": [
+        "1",
+        "0",
+        "-1",
+        "It depends"
+       ],
+       "c": "B",
+       "e": "Java indexes start at 0."
+      },
+      {
+       "q": "Which method returns the number of elements?",
+       "o": [
+        "length()",
+        "size()",
+        "count()",
+        "len()"
+       ],
+       "c": "B",
+       "e": "Collections use size(); arrays use .length."
+      }
+     ]
+    },
+    {
+     "title": "Set",
+     "content": "A Set stores unique elements and rejects duplicates. HashSet is the fastest and has no guaranteed order; LinkedHashSet keeps insertion order; TreeSet keeps elements sorted. add() returns false if the element already exists. Use a Set to remove duplicates from a list.",
+     "cards": [
+      [
+       "What is special about a Set?",
+       "It contains no duplicate elements."
+      ],
+      [
+       "HashSet vs TreeSet?",
+       "HashSet: no order, fastest. TreeSet: sorted order."
+      ],
+      [
+       "What does add() return for a duplicate?",
+       "false - the set is unchanged."
+      ],
+      [
+       "How can you remove duplicates from a List?",
+       "Copy it into a Set, e.g. new LinkedHashSet<>(list)."
+      ]
+     ],
+     "quiz": [
+      {
+       "q": "Which collection does not allow duplicates?",
+       "o": [
+        "List",
+        "Set",
+        "ArrayList",
+        "LinkedList"
+       ],
+       "c": "B",
+       "e": "A Set holds unique elements only."
+      },
+      {
+       "q": "Which Set keeps elements sorted?",
+       "o": [
+        "HashSet",
+        "LinkedHashSet",
+        "TreeSet",
+        "ArrayList"
+       ],
+       "c": "C",
+       "e": "TreeSet is sorted by natural order."
+      },
+      {
+       "q": "Which Set preserves insertion order?",
+       "o": [
+        "HashSet",
+        "TreeSet",
+        "LinkedHashSet",
+        "None"
+       ],
+       "c": "C",
+       "e": "LinkedHashSet remembers insertion order."
+      }
+     ]
+    },
+    {
+     "title": "Map",
+     "content": "A Map stores key-value pairs with unique keys. HashMap offers fast lookup with no order, LinkedHashMap keeps insertion order and TreeMap sorts by key. Use put(key, value) to add, get(key) to read, containsKey, remove and entrySet to iterate. Example: Map<String,Integer> marks = new HashMap<>(); marks.put(\"Asha\", 90);",
+     "cards": [
+      [
+       "What does a Map store?",
+       "Key-value pairs; keys are unique."
+      ],
+      [
+       "How do you read a value?",
+       "map.get(key)"
+      ],
+      [
+       "What happens if you put an existing key?",
+       "The old value is replaced."
+      ],
+      [
+       "HashMap vs TreeMap?",
+       "HashMap: fast, unordered. TreeMap: sorted by key."
+      ]
+     ],
+     "quiz": [
+      {
+       "q": "Which method adds an entry to a Map?",
+       "o": [
+        "add",
+        "put",
+        "insert",
+        "push"
+       ],
+       "c": "B",
+       "e": "map.put(key, value)."
+      },
+      {
+       "q": "Map keys must be...",
+       "o": [
+        "unique",
+        "sorted",
+        "strings",
+        "numbers"
+       ],
+       "c": "A",
+       "e": "Keys are unique; values may repeat."
+      },
+      {
+       "q": "map.get(\"x\") returns what if the key is missing?",
+       "o": [
+        "0",
+        "null",
+        "an exception",
+        "an empty string"
+       ],
+       "c": "B",
+       "e": "get returns null when the key is absent."
+      }
+     ]
+    }
+   ],
+   "position": 3
+  }
+ ]
+}

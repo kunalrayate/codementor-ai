@@ -1,0 +1,42 @@
+CREATE TABLE quizzes (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  lesson_id BIGINT NOT NULL,
+  title VARCHAR(200) NOT NULL,
+  status VARCHAR(20) NOT NULL,
+  ai_generated BOOLEAN NOT NULL DEFAULT FALSE,
+  created_by_id BIGINT,
+  created_at DATETIME NOT NULL,
+  FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE,
+  FOREIGN KEY (created_by_id) REFERENCES users(id) ON DELETE SET NULL
+);
+CREATE TABLE questions (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  quiz_id BIGINT NOT NULL,
+  question_text TEXT NOT NULL,
+  option_a VARCHAR(500) NOT NULL,
+  option_b VARCHAR(500) NOT NULL,
+  option_c VARCHAR(500) NOT NULL,
+  option_d VARCHAR(500) NOT NULL,
+  correct VARCHAR(1) NOT NULL,
+  explanation TEXT,
+  FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE
+);
+CREATE TABLE quiz_results (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  student_id BIGINT NOT NULL,
+  quiz_id BIGINT NOT NULL,
+  score INT NOT NULL,
+  total INT NOT NULL,
+  percent INT NOT NULL,
+  passed BOOLEAN NOT NULL,
+  created_at DATETIME NOT NULL,
+  FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE
+);
+CREATE TABLE flashcards (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  lesson_id BIGINT NOT NULL,
+  question TEXT NOT NULL,
+  answer TEXT NOT NULL,
+  FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE
+);
